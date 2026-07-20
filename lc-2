@@ -1,0 +1,116 @@
+Activity 1: Count the number of digits
+import java.util.Scanner;
+
+public class CountDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        int count = 0;
+        int temp = num;
+
+        while (temp != 0) {
+            count++;
+            temp = temp / 10;
+        }
+
+        System.out.println("Number of digits = " + count);
+
+        sc.close();
+    }
+}
+
+Activity 2: Sum of all digits
+import java.util.Scanner;
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        int sum = 0;
+
+        while (num != 0) {
+            sum = sum + (num % 10);
+            num = num / 10;
+        }
+
+        System.out.println("Sum of digits = " + sum);
+
+        sc.close();
+    }
+}
+
+Activity 3: Decimal to Binary
+import java.util.Scanner;
+
+public class DecimalToBinary {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a decimal number: ");
+        int num = sc.nextInt();
+
+        String binary = "";
+
+        while (num > 0) {
+            binary = (num % 2) + binary;
+            num = num / 2;
+        }
+
+        System.out.println("Binary = " + binary);
+
+        sc.close();
+    }
+}
+
+Activity 4: Binary to Decimal
+import java.util.Scanner;
+
+public class BinaryToDecimal {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a binary number: ");
+        int binary = sc.nextInt();
+
+        int decimal = 0;
+        int base = 1;
+
+        while (binary > 0) {
+            int lastDigit = binary % 10;
+            decimal = decimal + lastDigit * base;
+            base = base * 2;
+            binary = binary / 10;
+        }
+
+        System.out.println("Decimal = " + decimal);
+
+        sc.close();
+    }
+}
+
+Activity 5: Smallest exact divisor other than 1
+import java.util.Scanner;
+
+public class SmallestDivisor {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        for (int i = 2; i <= num; i++) {
+            if (num % i == 0) {
+                System.out.println("Smallest exact divisor = " + i);
+                break;
+            }
+        }
+
+        sc.close();
+    }
+}
