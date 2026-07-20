@@ -1,0 +1,141 @@
+Activity 1: Reverse a String
+import java.util.Scanner;
+
+public class ReverseString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.util.Scanner);
+        System.out.print("Enter a string: ");
+        String original = scanner.nextLine();
+        
+        String reversed = "";
+        for (int i = original.length() - 1; i >= 0; i--) {
+            reversed += original.charAt(i);
+        }
+        
+        System.out.println("Reversed string: " + reversed);
+        scanner.close();
+    }
+}
+
+Activity 2: Replace Vowels with 'z'
+package lc1;
+import java.util.Scanner;
+
+public class ReplaceVowels {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String original = sc.nextLine();
+        
+        String modified = "";
+        boolean hasVowels = false;
+        
+        for (int i = 0; i < original.length(); i++) {
+            char ch = original.charAt(i);
+            char lowerCh = Character.toLowerCase(ch);
+            
+            if (lowerCh == 'a' || lowerCh == 'e' || lowerCh == 'i' || lowerCh == 'o' || lowerCh == 'u') {
+                modified += 'z';
+                hasVowels = true;
+            } else {
+                modified += ch;
+            }
+        }
+        
+        if (hasVowels) {
+            System.out.println("Modified string: " + modified);
+        } else {
+            System.out.println(original + " No vowels present");
+        }
+        
+        System.out.println("URK23CS1280");
+        sc.close();
+    }
+}
+
+
+Activity 3: Concatenate Two Strings
+
+package lc1;
+import java.util.Scanner;
+
+public class ConcatenateStrings {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter string1: ");
+        String string1 = sc.nextLine();
+        
+        System.out.print("Enter string2: ");
+        String string2 = sc.nextLine();
+        
+        String string3 = string1 + string2;
+        
+        System.out.println("string3 must be \"" + string3 + "\"");
+        System.out.println("URK23CS1280");
+        sc.close();
+    }
+}
+
+Activity 4: Character Count
+package lc1;
+import java.util.Scanner;
+
+public class CharacterCount {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input string = ");
+        String str = sc.nextLine();
+        
+        System.out.println("Output must be -");
+        boolean[] visited = new boolean[str.length()];
+        
+        for (int i = 0; i < str.length(); i++) {
+            if (visited[i]) {
+                continue;
+            }
+            
+            int count = 1;
+            for (int j = i + 1; j < str.length(); j++) {
+                if (str.charAt(i) == str.charAt(j)) {
+                    visited[j] = true;
+                    count++;
+                }
+            }
+            System.out.println(str.charAt(i) + " - " + count);
+        }
+        
+        System.out.println("URK23CS1280");
+        sc.close();
+    }
+}
+
+
+Activity 5: Concatenate with Reversed Second String
+package lc1;
+import java.util.Scanner;
+
+public class ConcatenateWithReverse {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter string1: ");
+        String string1 = sc.nextLine();
+        
+        System.out.print("Enter string2: ");
+        String string2 = sc.nextLine();
+        
+        String reversedString2 = "";
+        for (int i = string2.length() - 1; i >= 0; i--) {
+            reversedString2 += string2.charAt(i);
+        }
+        
+        String string3 = string1 + reversedString2;
+        
+        System.out.println("string3 must be \"" + string3 + "\"");
+        System.out.println("URK23CS1280");
+        sc.close();
+    }
+}
+
+
